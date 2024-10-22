@@ -27,6 +27,6 @@ export class CategoriaComponent {
   getAllCategorias() {
     this.categoriaService.getCategorias().subscribe((data)=> {
       this.categorias = data;
-    })
+    });
   }
 }

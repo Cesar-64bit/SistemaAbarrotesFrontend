@@ -13,7 +13,6 @@ export class CategoriaService {
   constructor(private http:HttpClient) { }
 
   getCategorias():Observable<Categoria[]> {
-    console.log(this.http.get<Categoria[]>(this.apiUrl));
     return this.http.get<Categoria[]>(this.apiUrl);
   }
 

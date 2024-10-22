@@ -1,1 +1,40 @@
-<p>proveedor works!</p>
+<div class="flex">
+    <p-table 
+    [value]="proveedores" 
+    [paginator]="true"
+    [rows]="5"
+    [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>ID</th>
+                <th>Clave</th>
+                <th>Nombre</th>
+                <th>RFC</th>
+                <th>C.P.</th>
+                <th>Pais</th>
+                <th>Ciudad</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Correo Electronico</th>
+                <th>Fecha Alta</th>
+                <th>Estatus</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-proveedor>
+            <tr>
+                <td>{{ proveedor.idProveedor }}</td>
+                <td>{{ proveedor.claveProveedor }}</td>
+                <td>{{ proveedor.nombreProveedor }}</td>
+                <td>{{ proveedor.rfc }}</td>
+                <td>{{ proveedor.codigoPostal }}</td>
+                <td>{{ proveedor.pais }}</td>
+                <td>{{ proveedor.ciudad }}</td>
+                <td>{{ proveedor.direccion }}</td>
+                <td>{{ proveedor.telefono }}</td>
+                <td>{{ proveedor.correoElectronico }}</td>
+                <td>{{ proveedor.fechaAlta }}</td>
+                <td>{{ proveedor.estatus }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
