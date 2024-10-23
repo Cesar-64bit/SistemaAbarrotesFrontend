@@ -21,7 +21,7 @@ export class ProveedorComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.getAllProveedores());
+    this.getAllProveedores();
   }
 
   getAllProveedores() {
