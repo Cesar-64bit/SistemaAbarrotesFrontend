@@ -1,0 +1,21 @@
+<div class="flex justify-content-center flex-wrap">
+    <p-table 
+    [value]="inventario"
+    [paginator]="true"
+    [rows]="5"
+    [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Codigo</th>
+                <th>Descripcion</th>
+                <th>Cantidad</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-inventario>
+            <tr>
+                <td>{{ inventario.producto.codigoProducto}}</td>
+                <td>{{ inventario.producto.descripcion }}</td>
+                <td>{{ inventario.cantidad }}</td>
+        </ng-template>
+    </p-table>
+</div>
