@@ -1,21 +1,33 @@
-<div class="flex justify-content-center flex-wrap">
-    <p-table 
-    [value]="inventario"
-    [paginator]="true"
-    [rows]="5"
-    [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header">
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Inventario</h2>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered table-striped align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th class="text-center">Codigo</th>
+            <th class="text-center">Descripción</th>
+            <th class="text-center">Cantidad</th>
+            <th class="text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (inventario of inventario; track inventario.idInventario) {
             <tr>
-                <th>Codigo</th>
-                <th>Descripcion</th>
-                <th>Cantidad</th>
+                <td class="text-center">{{ inventario.producto.codigoProducto }}</td>
+                <td class="text-center">{{ inventario.producto.descripcion }}</td>
+                <td class="text-center">{{ inventario.cantidad }}</td>
+                <td class="text-center">
+                <button class="btn btn-warning btn-sm me-1">
+                  <i class="bi bi-pencil-square"></i> Editar
+                </button>
+                <button class="btn btn-danger btn-sm">
+                  <i class="bi bi-trash"></i> Eliminar
+                </button>
+              </td>
             </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-inventario>
-            <tr>
-                <td>{{ inventario.producto.codigoProducto}}</td>
-                <td>{{ inventario.producto.descripcion }}</td>
-                <td>{{ inventario.cantidad }}</td>
-        </ng-template>
-    </p-table>
-</div>
+          }
+        </tbody>
+      </table>
+    </div>1
+  </div>
+  

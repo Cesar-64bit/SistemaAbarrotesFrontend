@@ -1,24 +1,29 @@
-<div class="flex justify-content-center flex-wrap">
-    <p-table 
-    [value]="categorias" 
-    [paginator]="true"
-    [rows]="5"
-    [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header">
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Categorías</h2>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered table-striped align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th class="text-center">Descripción</th>
+            <th class="text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (categoria of categorias; track categoria.descripcion) {
             <tr>
-                <th>ID</th>
-                <th>Descripcion</th>
-                <th>Fecha alta</th>
-                <th>Estatus</th>
+              <td class="text-center">{{ categoria.descripcion }}</td>
+              <td class="text-center">
+                <button class="btn btn-warning btn-sm me-1">
+                  <i class="bi bi-pencil-square"></i> Editar
+                </button>
+                <button class="btn btn-danger btn-sm">
+                  <i class="bi bi-trash"></i> Eliminar
+                </button>
+              </td>
             </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-categoria>
-            <tr>
-                <td>{{ categoria.idCategoria }}</td>
-                <td>{{ categoria.descripcion }}</td>
-                <td>{{ categoria.fechaAlta }}</td>
-                <td>{{ categoria.estatus }}</td>
-            </tr>
-        </ng-template>
-    </p-table>
-</div>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { TableModule } from 'primeng/table';
 import { Categoria } from '../../models/categoria';
 import { CategoriaService } from '../../service/categoria.service';
 
 @Component({
   selector: 'app-categoria',
   standalone: true,
-  imports: [TableModule],
+  imports: [],
   templateUrl: './categoria.component.html',
   styleUrl: './categoria.component.scss'
 })
 export class CategoriaComponent {
 
   categorias:Categoria[] = [];
+  categoriaById:Categoria | null = null;
 
   constructor(
     private categoriaService:CategoriaService
@@ -29,4 +29,10 @@ export class CategoriaComponent {
       this.categorias = data;
     });
   }
+
+  // getCategoriaById(id:number) {
+  //   this.categoriaService.getCategoriaById(id).subscribe((data)=> {
+  //     this.categoriaById = data;
+  //   })
+  // }
 }

@@ -10,6 +10,11 @@ export const routes: Routes = [
         component:CategoriaComponent,
         title:'Categorias'
     },
+    // {
+    //     path:'categorias/:id',
+    //     component:CategoriaComponent,
+    //     title:'Categorias'
+    // },
     {
         path:'proveedores',
         component:ProveedorComponent,

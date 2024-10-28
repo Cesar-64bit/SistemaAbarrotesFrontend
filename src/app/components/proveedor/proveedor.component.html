@@ -1,40 +1,44 @@
-<div class="flex justify-content-center flex-wrap">
-    <p-table 
-    [value]="proveedores"
-    [paginator]="true"
-    [rows]="5"
-    [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header">
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Proveedores</h2>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered table-striped align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th class="text-center">Clave</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">R.F.C</th>
+            <th class="text-center">C.P.</th>
+            <th class="text-center">Pais</th>
+            <th class="text-center">Ciudad</th>
+            <th class="text-center">Direccion</th>
+            <th class="text-center">Telefono</th>
+            <th class="text-center">Correo Electronico</th>
+            <th class="text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for (proveedor of proveedores; track proveedor.claveProveedor) {
             <tr>
-                <th>ID</th>
-                <th>Clave</th>
-                <th>Nombre</th>
-                <th>RFC</th>
-                <th>C.P.</th>
-                <th>Pais</th>
-                <th>Ciudad</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Correo Electronico</th>
-                <th>Fecha Alta</th>
-                <th>Estatus</th>
+                <td class="text-center">{{ proveedor.claveProveedor }}</td>
+                <td  class="text-center">{{ proveedor.nombreProveedor }}</td>
+                <td  class="text-center">{{ proveedor.rfc }}</td>
+                <td  class="text-center">{{ proveedor.codigoPostal }}</td>
+                <td  class="text-center">{{ proveedor.pais }}</td>
+                <td  class="text-center">{{ proveedor.ciudad }}</td>
+                <td  class="text-center">{{ proveedor.direccion }}</td>
+                <td  class="text-center">{{ proveedor.telefono }}</td>
+                <td  class="text-center">{{ proveedor.correoElectronico }}</td>
+                <td class="text-center">
+                    <button class="btn btn-warning btn-sm me-1">
+                    <i class="bi bi-pencil-square"></i> Editar
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                    <i class="bi bi-trash"></i> Eliminar
+                    </button>
+                </td>
             </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-proveedor>
-            <tr>
-                <td>{{ proveedor.idProveedor }}</td>
-                <td>{{ proveedor.claveProveedor }}</td>
-                <td>{{ proveedor.nombreProveedor }}</td>
-                <td>{{ proveedor.rfc }}</td>
-                <td>{{ proveedor.codigoPostal }}</td>
-                <td>{{ proveedor.pais }}</td>
-                <td>{{ proveedor.ciudad }}</td>
-                <td>{{ proveedor.direccion }}</td>
-                <td>{{ proveedor.telefono }}</td>
-                <td>{{ proveedor.correoElectronico }}</td>
-                <td>{{ proveedor.fechaAlta }}</td>
-                <td>{{ proveedor.estatus }}</td>
-            </tr>
-        </ng-template>
-    </p-table>
+          }
+        </tbody>
+      </table>
+    </div>
 </div>
