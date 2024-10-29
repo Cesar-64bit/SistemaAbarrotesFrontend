@@ -1,40 +1,42 @@
 <div class="container mt-4">
-    <h2 class="text-center mb-4">Proveedores</h2>
-    <div class="table-responsive">
-      <table class="table table-hover table-bordered table-striped align-middle">
-        <thead class="table-dark">
+  <h2 class="mb-4">Lista de Proveedores</h2>
+  <div class="table-responsive shadow-sm rounded-lg overflow-auto" style="max-height: 60vh;">
+      <table class="table table-borderless mb-0" style="min-width: 600px;">
+          <thead class="position-sticky top-0" style="background-color: #f8f9fa; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
           <tr>
-            <th class="text-center">Clave</th>
-            <th class="text-center">Nombre</th>
-            <th class="text-center">R.F.C</th>
-            <th class="text-center">C.P.</th>
-            <th class="text-center">Pais</th>
-            <th class="text-center">Ciudad</th>
-            <th class="text-center">Direccion</th>
-            <th class="text-center">Telefono</th>
-            <th class="text-center">Correo Electronico</th>
-            <th class="text-center">Acciones</th>
+            <th class="text-center text-muted py-3">Clave</th>
+            <th class="text-center text-muted py-3">Nombre</th>
+            <th class="text-center text-muted py-3">R.F.C</th>
+            <th class="text-center text-muted py-3">C.P.</th>
+            <th class="text-center text-muted py-3">Pais</th>
+            <th class="text-center text-muted py-3">Ciudad</th>
+            <th class="text-center text-muted py-3">Direccion</th>
+            <th class="text-center text-muted py-3">Telefono</th>
+            <th class="text-center text-muted py-3">Correo Electronico</th>
+            <th class="text-center text-muted py-3">Acciones</th>
           </tr>
         </thead>
         <tbody>
             @for (proveedor of proveedores; track proveedor.claveProveedor) {
-            <tr>
-                <td class="text-center">{{ proveedor.claveProveedor }}</td>
-                <td  class="text-center">{{ proveedor.nombreProveedor }}</td>
-                <td  class="text-center">{{ proveedor.rfc }}</td>
-                <td  class="text-center">{{ proveedor.codigoPostal }}</td>
-                <td  class="text-center">{{ proveedor.pais }}</td>
-                <td  class="text-center">{{ proveedor.ciudad }}</td>
-                <td  class="text-center">{{ proveedor.direccion }}</td>
-                <td  class="text-center">{{ proveedor.telefono }}</td>
-                <td  class="text-center">{{ proveedor.correoElectronico }}</td>
-                <td class="text-center">
-                    <button class="btn btn-warning btn-sm me-1">
-                    <i class="bi bi-pencil-square"></i> Editar
+            <tr class="align-middle" style="transition: background-color 0.2s;">
+                <td class="text-center py-3 text-secondary">{{ proveedor.claveProveedor }}</td>
+                <td class="text-center py-3 text-secondary">{{ proveedor.nombreProveedor }}</td>
+                <td class="text-center py-3 text-secondary">{{ proveedor.rfc }}</td>
+                <td class="text-center py-3 text-secondary">{{ proveedor.codigoPostal }}</td>
+                <td class="text-center py-3 text-secondary">{{ proveedor.pais }}</td>
+                <td class="text-center py-3 text-secondary">{{ proveedor.ciudad }}</td>
+                <td class="text-center py-3 text-secondary">{{ proveedor.direccion }}</td>
+                <td class="text-center py-3 text-secondary">{{ proveedor.telefono }}</td>
+                <td class="text-center py-3 text-secondary">{{ proveedor.correoElectronico }}</td>
+                <td class="text-center py-3">
+                  <div class="d-flex justify-content-center gap-1 flex-wrap">
+                    <button class="btn btn-outline-warning btn-sm">
+                        <i class="bi bi-pencil-square"></i> Editar
                     </button>
-                    <button class="btn btn-danger btn-sm">
-                    <i class="bi bi-trash"></i> Eliminar
+                    <button class="btn btn-outline-danger btn-sm">
+                        <i class="bi bi-trash"></i> Eliminar
                     </button>
+                </div>
                 </td>
             </tr>
           }

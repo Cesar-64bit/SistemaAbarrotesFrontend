@@ -19,4 +19,8 @@ export class CategoriaService {
   getCategoriaById(id:number):Observable<Categoria> {
     return this.http.get<Categoria>(`${this.apiUrl}/${id}`);
   }
+
+  createCategoria(categoria:Categoria):Observable<Categoria> {
+    return this.http.post<Categoria>(this.apiUrl, categoria)
+  }
 }
